@@ -43,19 +43,68 @@ namespace curso {
             Console.WriteLine(carros[0]);
             Console.ReadLine();
 
-            while (selecao != 5) {
+            while (selecao != 7) {
                 Console.Clear();
-                Tela.mostraMenu();
-                //selecao = int.Parse(Console.ReadLine());
+                Tela.mostrarMenu();
                 try {
                     selecao = int.Parse(Console.ReadLine());
                 }
                 catch (Exception e) {
-                    Console.Write("Erro inesperado: " + e.Message);
+                    Console.WriteLine("Erro inesperado: " + e.Message);
                     selecao = 0;
                 }
+                Console.WriteLine();
+
                 if (selecao == 1) {
                     Tela.mostrarMarcas();
+                }
+                else if (selecao == 2) {
+                    Tela.mostrarCarrosDeUmaMarca();
+                }
+                else if (selecao == 3) {
+                    try {
+                        Tela.cadastrarMarcas();
+                    }
+                    catch (Exception e) {
+                        Console.WriteLine("Erro inesperado: " + e.Message);
+                    }
+                }
+                else if (selecao == 4) {
+                    try {
+                        Tela.cadastrarCarros();
+                    }
+                    catch (ModelException e) {
+                        Console.WriteLine("Erro de negócio: " + e.Message);
+                    }
+                    catch (Exception e) {
+                        Console.WriteLine("Erro inesperado: " + e.Message);
+                    }
+                }
+                else if (selecao == 5) {
+                    try {
+                        Tela.cadastrarAcessorios();
+                    }
+                    catch (Exception e) {
+                        Console.WriteLine("Erro inesperado: " + e.Message);
+                    }
+                }
+                else if (selecao == 6) {
+                    try {
+                        Tela.mostrarDetalhes(carros);
+                    }
+                    catch (ModelException e) {
+                        Console.WriteLine("Erro de negócio: " + e.Message);
+                    }
+                    catch (Exception e) {
+                        Console.WriteLine("Erro inesperado: " + e.Message);
+                    }
+                }
+                else if (selecao == 7) {
+                    Console.WriteLine("Fim do programa!");
+                }
+                else {
+                    Console.WriteLine("Opção inválida!");
+                    Console.WriteLine();
                 }
                 Console.ReadLine();
             }

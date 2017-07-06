@@ -16,8 +16,7 @@ namespace curso {
         }
 
         public override string ToString() {          
-            return "Acessórios: " + "\n" 
-                + descricao
+            return descricao
                 + ", " 
                 + "Preço: " 
                 + preco.ToString("F2", CultureInfo.InvariantCulture);

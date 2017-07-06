@@ -33,7 +33,8 @@ namespace curso {
         public override string ToString() {
             String s = codigo + ", " + modelo + ", Ano: " + ano
                 + ", Preço básico: " + precoBasico.ToString("F2", CultureInfo.InvariantCulture)
-                + ", Preço total: " + precoTotal().ToString("F2", CultureInfo.InvariantCulture);
+                + ", Preço total: " + precoTotal().ToString("F2", CultureInfo.InvariantCulture)
+                + "\n";
             if (acessorios.Count > 0) {
                 s = s + "\nAcessórios:";
                 for (int i = 0; i < acessorios.Count; i++) {
