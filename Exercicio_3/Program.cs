@@ -38,11 +38,6 @@ namespace curso {
             carros.Add(c5);
             carros.Add(c6);
 
-
-            Console.WriteLine(marcas[1]);
-            Console.WriteLine(carros[0]);
-            Console.ReadLine();
-
             while (selecao != 7) {
                 Console.Clear();
                 Tela.mostrarMenu();
